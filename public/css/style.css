@@ -22,7 +22,7 @@ body {
 /* navbar */
 .header-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   column-gap: 30px;
 }
@@ -52,4 +52,34 @@ body {
   background-color: var(--brown-color);
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.sign-up-btn:hover {
+  background-color: var(--brown-color) !important;
+  text-decoration: none;
+}
+
+.bg-image {
+  height: 100vh;
+  background-image: url('../img/layout_pic.png');
+  background-repeat: no-repeat;
+}
+
+.explore-container {
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  color: var(--white-color);
+  text-shadow: 3px 3px 3px #ccb89d;
+}
+
+.main-form {
+  font-size: 10px;
+}
+
+.row-season {
+  font-size: 36px;
+}
+
+.row-glamping {
+  font-size: 64px;
 }
