@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Angsana;
+  src: url('./fonts/Angsanaupc.ttf') format('truetype');
+}
+
+:root {
+  --main-bg-color: #6a6f4c;
+  --white-color: #ffffff;
+  --brown-color: #5d2410;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+/* navbar */
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 30px;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-nav > li {
+  margin: 20px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  color: var(--white-color);
+}
+
+.brand-name {
+  font-family: Angsana;
+  font-size: 121px;
+  font-weight: 700;
+  color: var(--white-color);
+  text-shadow: 3px 3px 3px #ccb89d;
+  text-decoration: none;
+}
+
+.sign-up-btn {
+  border-radius: 12px;
+  background-color: var(--brown-color);
+  padding-left: 10px;
+  padding-right: 10px;
+}
