@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #6a6f4c;
+  --white-color: #ffffff;
+  --brown-color: #5d2410;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 100px;
+  font-family: 'Poppins', sans-serif;
+  color: rgba(102, 102, 102, 1);
+}
+
+.sign-up-div {
+  font-size: 18px;
+  color: black;
+}
+
+.sign-up-btn {
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+  background-color: black;
+  color: white;
+  pointer-events: none;
+}
+
+.sign-in-btn {
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  background: rgb(201, 200, 200);
+  color: white;
+}
+.sign-up-btn,
+.sign-in-btn {
+  width: 300px;
+  height: 45px;
+  border: none;
+  margin-top: 30px;
+}
+
+.google-btn,
+.facebook-btn {
+  width: 454px;
+  height: 54px;
+  border-radius: 40px;
+  border: 1px solid black;
+  background-color: transparent;
+}
+
+.btn-group-via-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+span,
+.line-container,
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-container {
+  flex-direction: column;
+  gap: 50px;
+  background-color: white;
+  border-radius: 24px;
+  width: 732px;
+  height: 791px;
+}
+
+hr {
+  width: 190px;
+  margin: 10px;
+}
+
+img {
+  transform: scale(0.7);
+}
+
+form {
+  width: 454px;
+}
+
+.submit-btn {
+  background: rgb(201, 200, 200);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  margin-bottom: 20px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(201, 200, 200);
+}
+
+.circle-div {
+  background-color: rgba(196, 196, 196, 1);
+  width: 48px;
+  height: 48px;
+  border-radius: 100px;
+}
