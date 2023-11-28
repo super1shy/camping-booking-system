@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Login({ title, places, user }) {
+module.exports = function Login({ error }) {
   return (
     <html lang="en">
       <head>
@@ -20,7 +20,7 @@ module.exports = function Login({ title, places, user }) {
         />
         <link rel="stylesheet" href="/css/registration.css" />
         <link rel="stylesheet" href="/css/login.css" />
-        <title>Sing In</title>
+        <title>Sign In</title>
       </head>
       <body>
         <div className="sign-up-container">
@@ -56,7 +56,7 @@ module.exports = function Login({ title, places, user }) {
             className="needs-validation"
             noValidate=""
             method="POST"
-            action="/register"
+            action="/login"
           >
             <div className="row g-3">
               <div className="col-12">
@@ -90,6 +90,8 @@ module.exports = function Login({ title, places, user }) {
                 </div>
               </div>
             </div>
+            <br />
+            {error ? <div style={{ color: 'red' }}>{error}</div> : null}
             <br />
             <button
               className="w-100 btn btn-primary btn-lg submit-btn"

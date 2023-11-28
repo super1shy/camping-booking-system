@@ -6,37 +6,21 @@ module.exports = function Layout({ title, children, user }) {
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-          crossorigin="anonymous"
-        />
         <link rel="stylesheet" href="/css/style.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap"
-          rel="stylesheet"
-        />
-        <script defer src="/js/application.js"></script>
+        <script defer src="/js/application.js" />
         <title>{title}</title>
       </head>
       <body>
         <header>
-          <div class="container-fluid header-container">
+          <div class="container header-container">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="/" class="nav-link">
+                <a href="" class="nav-link">
                   Home
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/catalog" class="nav-link">
+                <a href="" class="nav-link">
                   Travel
                 </a>
               </li>
@@ -48,33 +32,24 @@ module.exports = function Layout({ title, children, user }) {
 
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  Blog
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="" class="nav-link">
                   Pricing
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/login" class="nav-link">
-                  Sing In
+                <a href="" class="nav-link">
+                  Favourites
                 </a>
               </li>
+              <hr />
               <li class="nav-item">
-                <a href="/register" class="nav-link btn sign-up-btn">
-                  Sign Up
+                <a href="/logout" class="nav-link btn sign-up-btn">
+                  {user.username}
                 </a>
               </li>
             </ul>
           </div>
         </header>
-        <div className="bg-image explore-container">
-          <div className="row row-glamping">EXPLORE GLAMPING WITH US</div>
-          <div className="row row-season">SEASON 2022/2023</div>
-        </div>
-
         {children}
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

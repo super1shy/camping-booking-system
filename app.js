@@ -8,6 +8,7 @@ const logger = require('morgan');
 const path = require('path');
 
 const indexRouter = require('./src/routers/index');
+const mainRouter = require('./src/routers/main');
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
@@ -20,6 +21,7 @@ const sessionConfig = {
     maxAge: 10 * 60 * 1000,
     httpOnly: true,
   },
+  name: 'Miracle',
 };
 
 app.use(express.static(path.join(__dirname, 'public/')));
@@ -28,6 +30,7 @@ app.use(expressSession(sessionConfig));
 app.use(express.json());
 app.use(logger('dev'));
 
+app.use('/main', mainRouter);
 app.use('/', indexRouter);
 
 app.listen(PORT, () => {
