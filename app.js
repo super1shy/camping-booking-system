@@ -30,7 +30,7 @@ app.use(expressSession(sessionConfig));
 app.use(express.json());
 app.use(logger('dev'));
 
-app.use('/main', mainRouter);
+app.use('/places', mainRouter);
 app.use('/', indexRouter);
 
 app.listen(PORT, () => {

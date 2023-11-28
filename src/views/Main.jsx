@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Main({ title }) {
+module.exports = function Main({ title, places }) {
   return (
     <html lang="en">
       <head>
@@ -43,7 +43,7 @@ module.exports = function Main({ title }) {
             </ul>
 
             <a class="brand-name" href="#">
-              MIRACLE
+              NAME
             </a>
 
             <ul class="navbar-nav">

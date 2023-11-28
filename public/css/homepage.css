@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.places-container {
+  width: 760px;
+}
+
+.card {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px 0px 0px 12px;
+}
+
+.card-img-top {
+  width: 236px;
+  height: 273.5px;
+  border-radius: 12px 0px 0px 12px;
+}

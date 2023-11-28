@@ -16,7 +16,6 @@ exports.register = async (req, res) => {
     await User.create({ firstName, lastName, email, password: hashedPassword });
     res.redirect('/login');
   } catch (error) {
-    console.log(error);
     renderTemplate(
       Registration,
       { error: 'This email has been already in use' },
@@ -51,7 +50,7 @@ exports.login = async (req, res) => {
         id: user.id,
         username: user.firstName,
       };
-      res.redirect('/main');
+      res.redirect('/places');
     }
   } catch (error) {
     renderTemplate(

@@ -6,7 +6,14 @@ module.exports = function Layout({ title, children, user }) {
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous"
+        />
         <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/homepage.css" />
         <script defer src="/js/application.js" />
         <title>{title}</title>
       </head>
@@ -27,7 +34,7 @@ module.exports = function Layout({ title, children, user }) {
             </ul>
 
             <a class="brand-name" href="#">
-              MIRACLE
+              NAME
             </a>
 
             <ul class="navbar-nav">
@@ -37,14 +44,14 @@ module.exports = function Layout({ title, children, user }) {
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="/places/favourites" class="nav-link">
                   Favourites
                 </a>
               </li>
               <hr />
               <li class="nav-item">
                 <a href="/logout" class="nav-link btn sign-up-btn">
-                  {user.username}
+                  {user ? user.username : null}
                 </a>
               </li>
             </ul>
