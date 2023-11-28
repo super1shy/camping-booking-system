@@ -6,19 +6,16 @@ module.exports = function Homepage({ title, user, places }) {
     <Layout title={title} user={user}>
       <div className="container places-container">
         {places.map((place) => (
-          <div class="card">
+          <div className="card">
             <img
-              class="card-img-top"
-              src="/img/splash.jpg"
+              className="card-img-top"
+              src={place.images ? `/img/${place.images[0]}` : '/img/splash.jpg'}
               alt="Card image cap"
             />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href={`/places/${place.id}`} class="btn btn-primary">
+            <div className="card-body">
+              <h5 className="card-title">{place.name}</h5>
+              <p className="card-text">{place.overview}</p>
+              <a href={`/places/${place.id}`} className="btn btn-primary">
                 View place
               </a>
             </div>

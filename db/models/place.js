@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       overview: DataTypes.TEXT,
       capacity: DataTypes.INTEGER,
       price: DataTypes.FLOAT,
-      images: DataTypes.ARRAY,
+      images: DataTypes.ARRAY(DataTypes.TEXT),
       location_id: DataTypes.INTEGER,
     },
     {

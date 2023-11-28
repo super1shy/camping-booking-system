@@ -10,7 +10,7 @@ module.exports = function Layout({ title, children, user }) {
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="/css/style.css" />
         <link rel="stylesheet" href="/css/homepage.css" />
@@ -19,40 +19,63 @@ module.exports = function Layout({ title, children, user }) {
       </head>
       <body>
         <header>
-          <div class="container header-container">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a href="" class="nav-link">
+          <div className="container header-container">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a href="" className="nav-link">
                   Home
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
+              <li className="nav-item">
+                <a href="/places" className="nav-link">
                   Travel
                 </a>
               </li>
             </ul>
 
-            <a class="brand-name" href="#">
+            <a className="brand-name" href="#">
               NAME
             </a>
 
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a href="" class="nav-link">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a href="" className="nav-link">
                   Pricing
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="/places/favourites" class="nav-link">
+              <li className="nav-item">
+                <a href="/places/favourites" className="nav-link">
                   Favourites
                 </a>
               </li>
               <hr />
-              <li class="nav-item">
-                <a href="/logout" class="nav-link btn sign-up-btn">
-                  {user ? user.username : null}
-                </a>
+              <li className="nav-item">
+                <div className="dropdown">
+                  <button
+                    className="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {user ? user.username : null}
+                  </button>
+                  <div
+                    className="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a className="dropdown-item" href="#">
+                      My bookings
+                    </a>
+                    <a className="dropdown-item" href="#">
+                      Support
+                    </a>
+                    <a className="dropdown-item" href="/logout">
+                      Log Out
+                    </a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -61,8 +84,8 @@ module.exports = function Layout({ title, children, user }) {
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-          crossorigin="anonymous"
-        ></script>
+          crossOrigin="anonymous"
+        />
       </body>
     </html>
   );

@@ -97,7 +97,7 @@ module.exports = function Login({ error }) {
               className="w-100 btn btn-primary btn-lg submit-btn"
               type="submit"
             >
-              Sign Up
+              Sign In
             </button>
           </form>
         </div>

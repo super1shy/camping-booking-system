@@ -5,7 +5,9 @@
 }
 
 .places-container {
-  width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card {
@@ -19,4 +21,76 @@
   width: 236px;
   height: 273.5px;
   border-radius: 12px 0px 0px 12px;
+}
+
+#dropdownMenuButton {
+  border-radius: 12px;
+  background-color: var(--brown-color);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.place-info-container {
+  background-color: rgba(241, 233, 220, 1);
+  width: 1000px;
+  height: 202px;
+  border-radius: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+}
+
+.main-place-info-container {
+  width: 1000px;
+  border-radius: 38px;
+  background-color: rgba(241, 233, 220, 0.75);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-place-info-container > div {
+  margin: 30px;
+}
+.img-1 {
+  width: 700px;
+  height: 373px;
+  border-top-left-radius: 35px;
+}
+
+.img-2,
+.img-3 {
+  width: 300px;
+  height: 200px;
+}
+
+.img-2 {
+  border-bottom-left-radius: 35px;
+}
+
+.img-4 {
+  width: 290px;
+  height: 580px;
+  border-radius: 0px 35px 35px 0px;
+}
+
+.col-8 > div {
+  margin-bottom: 10px;
+}
+
+.book-btn {
+  width: 150px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: rgba(204, 184, 157, 0.92);
+}
+
+.book-btn:hover {
+  background-color: rgba(204, 184, 157, 0.92);
+}
+
+.card {
+  background-color: transparent;
 }

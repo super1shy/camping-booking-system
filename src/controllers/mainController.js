@@ -27,11 +27,12 @@ exports.makeReservation = async (req, res) => {
   try {
     const user_id = req.session.user.id;
     const place_id = req.params.id;
+    const { checkInDate, checkOutDate } = req.body;
     const isMade = await Reservation.create({
       user_id,
       place_id,
-      checkout: '2020-11-11',
-      check_in: '2020-12-12',
+      checkInDate,
+      checkOutDate,
     });
     res.json(isMade);
   } catch (error) {
