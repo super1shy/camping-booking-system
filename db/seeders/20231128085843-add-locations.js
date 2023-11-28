@@ -1,4 +1,3 @@
-'use strict';
 const { faker } = require('@faker-js/faker');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -7,8 +6,9 @@ module.exports = {
     await queryInterface.bulkInsert(
       'Locations',
       arr.map((el) => ({
-        title: faker.word.words(1),
-        address: faker.word.words(5),
+        name: faker.word.words(1),
+        fullAddress: faker.word.words(8),
+        postcode: faker.location.zipCode(),
       })),
       {}
     );

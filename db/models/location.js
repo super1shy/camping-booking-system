@@ -1,5 +1,5 @@
-'use strict';
 const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Location extends Model {
     static associate(models) {
@@ -8,8 +8,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Location.init(
     {
-      title: DataTypes.STRING,
-      address: DataTypes.STRING,
+      name: DataTypes.STRING,
+      fullAddress: DataTypes.STRING,
+      postcode: DataTypes.INTEGER,
     },
     {
       sequelize,
