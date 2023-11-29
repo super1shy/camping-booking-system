@@ -1,8 +1,8 @@
 const renderTemplate = require('../lib/renderTemplate');
-const Homepage = require('../views/Homepage');
+const Homepage = require('../views/places/Homepage');
+const PlacePage = require('../views/places/PlacePage');
 
 const { Place, Location, Reservation } = require('../../db/models');
-const PlacePage = require('../views/PlacePage');
 
 exports.homepage = async (req, res) => {
   const { user } = req.session;

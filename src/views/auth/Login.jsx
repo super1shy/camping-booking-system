@@ -19,7 +19,6 @@ module.exports = function Login({ error }) {
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/css/registration.css" />
-        <link rel="stylesheet" href="/css/login.css" />
         <title>Sign In</title>
       </head>
       <body>

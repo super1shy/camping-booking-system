@@ -12,7 +12,17 @@ module.exports = function Layout({ title, children, user }) {
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
           crossOrigin="anonymous"
         />
-        <link rel="stylesheet" href="/css/style.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/css/layout.css" />
         <link rel="stylesheet" href="/css/homepage.css" />
         <script defer src="/js/application.js" />
         <title>{title}</title>
@@ -59,6 +69,7 @@ module.exports = function Layout({ title, children, user }) {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
+                    <i className="bi bi-person-circle" /> &nbsp;
                     {user ? user.username : null}
                   </button>
                   <div
