@@ -80,11 +80,17 @@
   margin-bottom: 10px;
 }
 
-.book-btn {
+.book-btn,
+.payment-btn {
   width: 150px;
   height: 48px;
   border-radius: 4px;
   background-color: rgba(204, 184, 157, 0.92);
+}
+
+.payment-btn,
+.error-feedback {
+  display: none;
 }
 
 .book-btn:hover {

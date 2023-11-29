@@ -23,22 +23,22 @@ exports.placePage = async (req, res) => {
   }
 };
 
-exports.makeReservation = async (req, res) => {
-  try {
-    const user_id = req.session.user.id;
-    const place_id = req.params.id;
-    const { checkInDate, checkOutDate } = req.body;
-    const isMade = await Reservation.create({
-      user_id,
-      place_id,
-      checkInDate,
-      checkOutDate,
-    });
-    res.json(isMade);
-  } catch (error) {
-    console.error(error);
-  }
-};
+// exports.makeReservation = async (req, res) => {
+//   try {
+//     const user_id = req.session.user.id;
+//     const place_id = req.params.id;
+//     const { checkInDate, checkOutDate } = req.body;
+//     const isMade = await Reservation.create({
+//       user_id,
+//       place_id,
+//       checkInDate,
+//       checkOutDate,
+//     });
+//     res.json(isMade);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
 // exports.favourites = async (req, res) => {
 //   try {

@@ -91,6 +91,7 @@ module.exports = function PlacePage({ title, user, place }) {
                       className="form-control"
                     />
                   </div>
+
                   <div className="col-4">
                     <button
                       className="btn book-btn booking-btn"
@@ -99,11 +100,25 @@ module.exports = function PlacePage({ title, user, place }) {
                     >
                       Book Now
                     </button>
+                    <button className="btn book-btn payment-btn" type="submit">
+                      Pay Now
+                    </button>
+                    <div className="line-container">
+                      <hr />
+                      OR
+                      <hr />
+                    </div>
+                    <span>
+                      <a href={`/booking/${user.id}`}>see your bookings</a>
+                    </span>
                   </div>
                 </div>
               </form>
             </div>
           </div>
+          <span className="error-feedback text-center">
+            Please, check dates again. There must be a mistake
+          </span>
 
           <div className="row">
             <span>Location/Map</span>

@@ -9,6 +9,7 @@ const path = require('path');
 
 const indexRouter = require('./src/routers/index');
 const mainRouter = require('./src/routers/main');
+const bookingRouter = require('./src/routers/booking');
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
@@ -31,6 +32,7 @@ app.use(express.json());
 app.use(logger('dev'));
 
 app.use('/places', mainRouter);
+app.use('/booking', bookingRouter);
 app.use('/', indexRouter);
 
 app.listen(PORT, () => {
