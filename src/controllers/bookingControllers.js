@@ -37,18 +37,16 @@ exports.payBooking = async (req, res) => {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: currentBooking.name,
+              name: currentBooking.Place.name,
             },
-            unit_amount: currentBooking.Place.price * 1000,
+            unit_amount: currentBooking.Place.price * 100,
           },
           quantity: nightsToStay,
         },
       ],
-
-      success_url: `${process.env.CLIENT_URL}/success/${id}`,
-      cancel_url: `${process.env.CLIENT_URL}/cancel`,
+      success_url: `${process.env.CLIENT_URL}/booking/success/${id}`,
+      cancel_url: `${process.env.CLIENT_URL}/places/${currentBooking.place_id}`,
     });
-
     res.json({ url: session.url });
   } catch (e) {
     res.status(500).json({ error: e.message });

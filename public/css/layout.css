@@ -11,8 +11,8 @@
 
 body {
   background-image: url('../img/homepage_bg.png');
-  background-repeat: repeat-y;
-  background-size: contain;
+  /* background-repeat: repeat-y; */
+  background-size: cover;
   font-family: Angsana;
   color: white;
 }

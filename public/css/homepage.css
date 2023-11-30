@@ -106,6 +106,19 @@
   align-items: center;
 }
 
+.overview-card,
+.booking-card {
+  width: 900px;
+  border-radius: 38px;
+  background-color: transparent;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .main-place-info-container > div {
   margin: 30px;
 }
@@ -143,11 +156,28 @@
   background-color: rgba(204, 184, 157, 0.92);
 }
 
-.payment-btn,
+.line-container {
+  display: none;
+}
+
+.payment-btn {
+  margin-left: 280px;
+}
+
 .error-feedback {
   display: none;
 }
 
 .book-btn:hover {
   background-color: rgba(204, 184, 157, 0.92);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.booking-card,
+.overview-card {
+  height: inherit;
 }

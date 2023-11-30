@@ -31,9 +31,10 @@ bookingForm?.addEventListener('submit', async (e) => {
       if (response.status === 200) {
         const data = await response.json();
         const bookingId = data.id;
-        bookingForm.children[0].children[2].children[0].style.display = 'none';
-        bookingForm.children[0].children[2].children[1].style.display = 'block';
-        bookingForm.children[0].children[2].children[1].dataset.id = bookingId;
+        const btnGroup = document.querySelector('.line-container');
+        bookingForm.children[2].children[0].style.display = 'none';
+        btnGroup.style.display = 'block';
+        btnGroup.children[0].setAttribute('id', bookingId);
       }
     }
   } catch (error) {
@@ -43,12 +44,20 @@ bookingForm?.addEventListener('submit', async (e) => {
 
 paymentBtn?.addEventListener('click', async (e) => {
   try {
-    const { id } = e.target.dataset;
-    const response = await fetch(`/booking/checkout/${id}`, {
+    const { id } = e.target;
+    fetch(`/booking/checkout/${id}`, {
       method: 'POST',
-    });
-    const data = await response.json();
-    console.log(data);
+    })
+      .then((res) => {
+        if (res.ok) return res.json();
+        return res.json().then((json) => Promise.reject(json));
+      })
+      .then(({ url }) => {
+        window.location = url;
+      })
+      .catch((error) => {
+        console.log(error.error);
+      });
   } catch (error) {
     console.log(error);
   }
