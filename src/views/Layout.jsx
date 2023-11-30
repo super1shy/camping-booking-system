@@ -25,6 +25,7 @@ module.exports = function Layout({ title, children, user }) {
         <link rel="stylesheet" href="/css/layout.css" />
         <link rel="stylesheet" href="/css/homepage.css" />
         <script defer src="/js/application.js" />
+        <script defer src="/js/booking.js" />
         <title>{title}</title>
       </head>
       <body>
@@ -76,7 +77,7 @@ module.exports = function Layout({ title, children, user }) {
                     className="dropdown-menu"
                     aria-labelledby="dropdownMenuButton"
                   >
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="/booking">
                       My bookings
                     </a>
                     <a className="dropdown-item" href="#">
