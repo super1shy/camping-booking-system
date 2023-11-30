@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.hasMany(models.Reservation, { foreignKey: 'place_id' });
       this.belongsTo(models.Location, { foreignKey: 'location_id' });
+      this.hasMany(models.Favourites, { foreignKey: 'place_id' });
     }
   }
   Place.init(

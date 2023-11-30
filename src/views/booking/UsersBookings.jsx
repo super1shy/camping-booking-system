@@ -4,7 +4,7 @@ const Layout = require('../Layout');
 module.exports = function UsersBookings({ title, user, currenUsersBookings }) {
   return (
     <Layout title={title} user={user}>
-      <div className="container places-container">
+      <div className="container booked-places-container">
         {currenUsersBookings.map((booking) => (
           <div className="card">
             <img
@@ -31,9 +31,27 @@ module.exports = function UsersBookings({ title, user, currenUsersBookings }) {
                   </div>
                 </div>
                 <div className="col-4">
-                  <h3 className="card-title place-price">
-                    Full Price: ${booking.Place.price}
-                  </h3>
+                  {booking.status ? (
+                    <h3 className="card-title place-price">
+                      Paid: $
+                      {parseInt(
+                        (new Date(booking.checkOutDate) -
+                          new Date(booking.checkInDate)) /
+                          (1000 * 60 * 60 * 24),
+                        10
+                      ) * booking.Place.price}
+                    </h3>
+                  ) : (
+                    <h3 className="card-title place-price">
+                      To be paid: $
+                      {parseInt(
+                        (new Date(booking.checkOutDate) -
+                          new Date(booking.checkInDate)) /
+                          (1000 * 60 * 60 * 24),
+                        10
+                      ) * booking.Place.price}
+                    </h3>
+                  )}
                 </div>
               </div>
               <hr />
@@ -42,7 +60,42 @@ module.exports = function UsersBookings({ title, user, currenUsersBookings }) {
                   <button className="btn book-btn">
                     <a href="#">Details</a>
                   </button>
-                  <button
+                  {booking.status ||
+                  new Date(booking.createdAt).setHours(0, 0, 0, 0) !==
+                    new Date().setHours(0, 0, 0, 0) ? (
+                    <>
+                      <button
+                        className="btn book-btn cancel-btn"
+                        data-id={booking.id}
+                        disabled
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className="btn book-btn booking-btn"
+                        data-id={booking.id}
+                        disabled
+                      >
+                        Pay Now
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <button
+                        className="btn book-btn cancel-btn"
+                        data-id={booking.id}
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className="btn book-btn booking-btn"
+                        data-id={booking.id}
+                      >
+                        Pay Now
+                      </button>
+                    </>
+                  )}
+                  {/* <button
                     className="btn book-btn cancel-btn"
                     data-id={booking.id}
                   >
@@ -53,7 +106,7 @@ module.exports = function UsersBookings({ title, user, currenUsersBookings }) {
                     data-id={booking.id}
                   >
                     Pay Now
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
