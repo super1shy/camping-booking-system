@@ -57,17 +57,27 @@ exports.payBooking = async (req, res) => {
   }
 };
 
+exports.payment = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Reservation.update({ status: true }, { where: { id } });
+    res.redirect('/booking');
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 exports.showBookings = async (req, res) => {
   try {
-    const { id } = req.session.user;
+    const { user } = req.session;
     const currenUsersBookings = await Reservation.findAll({
-      where: { user_id: id },
+      where: { user_id: user.id },
       include: { model: Place, include: { model: Location } },
       order: [['createdAt', 'DESC']],
     });
 
     // change DB to have already nights to stay
-    renderTemplate(UsersBookings, { currenUsersBookings }, res);
+    renderTemplate(UsersBookings, { currenUsersBookings, user }, res);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

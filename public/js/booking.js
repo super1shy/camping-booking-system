@@ -2,7 +2,7 @@ const bookingForm = document.querySelector('.booking-form');
 const paymentBtn = document.querySelector('.payment-btn');
 const bookingsContainer = document.querySelector('.places-container');
 
-function createCheckout(id) {
+async function createCheckout(id) {
   fetch(`/booking/checkout/${id}`, {
     method: 'POST',
   })
@@ -102,7 +102,7 @@ bookingsContainer?.addEventListener('click', async (e) => {
       e.target.classList.contains('booking-btn')
     ) {
       const { id } = e.target.dataset;
-      createCheckout(id);
+      await createCheckout(id);
     }
   } catch (error) {
     console.error(error);
