@@ -70,7 +70,7 @@ module.exports = function PlacePage({ title, user, place }) {
               </div>
             </div>
           </div>
-          <div className="column">
+          <div className="column place-group-btn">
             <h3 className="card-title place-price">
               ${place.price}
               <span>/nigth</span>
@@ -82,7 +82,8 @@ module.exports = function PlacePage({ title, user, place }) {
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
-                  fill="currentColor"
+                  fill="salmon"
+                  color="salmon"
                   className="bi bi-heart-fill"
                   viewBox="0 0 16 16"
                 >
@@ -98,7 +99,7 @@ module.exports = function PlacePage({ title, user, place }) {
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
-                  fill="currentColor"
+                  fill="salmon"
                   className="bi bi-heart"
                   viewBox="0 0 16 16"
                 >
@@ -159,15 +160,6 @@ module.exports = function PlacePage({ title, user, place }) {
               </div>
             </div>
           </div>
-
-          {/* <div className="additional-info">
-            <div className="row">
-              <div className="col-3">4.3 Review(500)</div>
-              <div className="col-3">edassa</div>
-              <div className="col-3">ewcazsc</div>
-              <div className="col-3">edwscwde</div>
-            </div>
-          </div> */}
 
           <div className="card overview-card">
             <div className="card-body">

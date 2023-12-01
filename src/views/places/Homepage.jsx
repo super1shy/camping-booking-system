@@ -90,7 +90,8 @@ module.exports = function Homepage({ title, user, places }) {
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
-                        fill="currentColor"
+                        fill="salmon"
+                        color="salmon"
                         className="bi bi-heart-fill"
                         viewBox="0 0 16 16"
                       >
@@ -106,7 +107,7 @@ module.exports = function Homepage({ title, user, places }) {
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
-                        fill="currentColor"
+                        fill="salmon"
                         className="bi bi-heart"
                         viewBox="0 0 16 16"
                       >

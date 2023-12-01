@@ -8,9 +8,9 @@ exports.currentUsersFavourites = async (req, res) => {
     const { user } = req.session;
     const favesPlaces = await Favourites.findAll({
       where: { user_id: user.id },
-      include: { Place, include: { Location } },
+      include: { model: Place, include: { model: Location } },
     });
-
+    // renderTemplate
     res.send(favesPlaces);
   } catch (error) {
     console.error(error);
