@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Registration({ title, places, user }) {
+module.exports = function Registration({ error }) {
   return (
     <html lang="en">
       <head>
@@ -56,7 +56,6 @@ module.exports = function Registration({ title, places, user }) {
             OR
             <hr />
           </div>
-
           <form
             className="needs-validation"
             noValidate=""
@@ -129,6 +128,8 @@ module.exports = function Registration({ title, places, user }) {
                 </div>
               </div>
             </div>
+            <br />
+            {error ? <div style={{ color: 'red' }}>{error}</div> : null}
             <br />
             <button
               className="w-100 btn btn-primary btn-lg submit-btn"

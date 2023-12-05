@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+.places-container,
+.booked-places-container {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+}
+
+.card {
+  width: 740px;
+  height: 270px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px 12px 12px 12px;
+}
+
+.card-body {
+  margin-top: 10px;
+}
+
+.card-img-top {
+  width: 200px;
+  height: 270px;
+  border-radius: 12px 0px 0px 12px;
+}
+
+#dropdownMenuButton {
+  border-radius: 12px;
+  background-color: rgba(204, 184, 157, 1);
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+.bi-star {
+  fill: salmon;
+}
+
+.place-price {
+  color: salmon;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.place-btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.view-place-btn {
+  width: 452px;
+  height: 48px;
+  background-color: rgba(204, 184, 157, 1);
+  font-size: 18px;
+  text-align: center;
+}
+
+.like-btn {
+  width: 48px;
+  height: 48px;
+  border-color: salmon;
+}
+
+.bi-heart {
+  fill: black;
+}
+
+.like-btn:hover {
+  border-color: salmon;
+}
+
+.view-place-btn:hover {
+  background-color: rgba(204, 184, 157, 1);
+}
+
+/* one place styles */
+.place-info-container {
+  background-color: rgba(241, 233, 220, 1);
+  width: 1000px;
+  height: 202px;
+  border-radius: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+}
+
+.place-info-container > div {
+  margin: 0px 30px 0px 30px;
+  color: black;
+}
+
+.place-info-container > div > h3 {
+  padding-bottom: 30px;
+}
+.main-place-info-container {
+  width: 1000px;
+  border-radius: 38px;
+  background-color: rgba(241, 233, 220, 0.75);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overview-card,
+.booking-card {
+  width: 900px;
+  border-radius: 38px;
+  background-color: transparent;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-place-info-container > div {
+  margin: 30px;
+}
+.img-1 {
+  width: 700px;
+  height: 373px;
+  border-top-left-radius: 35px;
+}
+
+.img-2,
+.img-3 {
+  width: 300px;
+  height: 200px;
+}
+
+.img-2 {
+  border-bottom-left-radius: 35px;
+}
+
+.img-4 {
+  width: 290px;
+  height: 580px;
+  border-radius: 0px 35px 35px 0px;
+}
+
+.col-8 > div {
+  margin-bottom: 10px;
+}
+
+.book-btn,
+.payment-btn {
+  width: 150px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: rgba(204, 184, 157, 0.92);
+}
+
+.line-container {
+  display: none;
+}
+
+.payment-btn {
+  margin-left: 280px;
+}
+
+.error-feedback {
+  display: none;
+}
+
+.book-btn:hover {
+  background-color: rgba(204, 184, 157, 0.92);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.booking-card,
+.overview-card {
+  height: inherit;
+}

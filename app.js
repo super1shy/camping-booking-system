@@ -8,6 +8,9 @@ const logger = require('morgan');
 const path = require('path');
 
 const indexRouter = require('./src/routers/index');
+const mainRouter = require('./src/routers/main');
+const bookingRouter = require('./src/routers/booking');
+const favouritesRouter = require('./src/routers/favourites');
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
@@ -17,9 +20,10 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 10 * 60 * 1000,
+    maxAge: 10 * 60 * 60 * 1000,
     httpOnly: true,
   },
+  name: 'Miracle',
 };
 
 app.use(express.static(path.join(__dirname, 'public/')));
@@ -28,6 +32,9 @@ app.use(expressSession(sessionConfig));
 app.use(express.json());
 app.use(logger('dev'));
 
+app.use('/places', mainRouter);
+app.use('/favourites', favouritesRouter);
+app.use('/booking', bookingRouter);
 app.use('/', indexRouter);
 
 app.listen(PORT, () => {

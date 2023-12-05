@@ -9,10 +9,67 @@ exports.registerPage = (req, res) => {
   renderTemplate(Registration, {}, res);
 };
 
-exports.register = (req, res) => {
-  res.send(req.body);
+exports.register = async (req, res) => {
+  try {
+    const { firstName, lastName, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 7);
+    await User.create({ firstName, lastName, email, password: hashedPassword });
+    res.redirect('/login');
+  } catch (error) {
+    renderTemplate(
+      Registration,
+      { error: 'This email has been already in use' },
+      res
+    );
+  }
 };
 
 exports.loginPage = (req, res) => {
   renderTemplate(Login, {}, res);
+};
+
+exports.login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ where: { email } });
+    if (!user) {
+      renderTemplate(
+        Login,
+        {
+          error: 'User with this email address doesnt exist',
+        },
+        res
+      );
+    }
+
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+      renderTemplate(Login, { error: 'Invalid password' }, res);
+    } else {
+      req.session.user = {
+        id: user.id,
+        username: user.firstName,
+      };
+      res.redirect('/places');
+    }
+  } catch (error) {
+    renderTemplate(
+      Login,
+      {
+        error: 'An error occured. Please, try again',
+      },
+      res
+    );
+  }
+};
+
+exports.logout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      res.sendStatus(400);
+    } else {
+      res.clearCookie('Flash');
+      res.redirect('/');
+    }
+  });
 };
